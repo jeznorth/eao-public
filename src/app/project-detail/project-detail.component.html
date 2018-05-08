@@ -61,7 +61,8 @@
             </div>
 
             <div class="project-news-feed">
-              <table id="tableTop" class="activity-feed table" *ngIf="project">
+              <table id="tableTop" class="activity-feed table timeline" *ngIf="project">
+                <!--
                 <thead>
                   <tr>
                     <th class="sortable" (click)="sort('headline')">Title
@@ -74,13 +75,18 @@
                     </th>
                   </tr>
                 </thead>
+                -->
                 <tbody>
                   <tr class="activity-feed__item" 
                     *ngFor="let item of project.recent_activities | activitiesFilter: filter | newsTypeFilter: filterType | orderBy: {property: column, direction: direction} | paginate: config">
                     <td colspan="2">
+                      <div class="timeline__date">{{item.dateAdded | date:'longDate'}}</div>
+                      <div class="timeline__info">
+                        <span class="timeline__icon"></span>
+                        <span class="timeline__line"></span>
+                      </div>
                       <div class="title-container">
                         <h3 class="title-container__title">{{item.headline}}</h3>
-                        <span class="title-container__date">{{item.dateAdded | date:'longDate'}}</span>
                       </div>
                       <div class="activity-feed__content readmore">
                         <div class="readmore__content" 
