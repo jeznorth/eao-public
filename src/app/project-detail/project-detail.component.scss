@@ -119,3 +119,21 @@
     margin-bottom: 1.75rem;
   }
 }
+
+// Alert Banner 
+.alert-banner .container {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #fff;
+}
+
+.alert-banner__icon {
+  position: absolute;
+  top: 2.25rem;
+  left: 2.25rem;
+}
+
+.alert-banner__msg {
+  padding-left: 3rem;
+}
